@@ -1,0 +1,17 @@
+{
+  "name": "plasma-js",
+  "version": "1.0.0",
+  "description": "Canvas Plasma",
+  "main": "src/plasma.js",
+  "author": "David Dupplaw",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "webpack": "^2.6.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
