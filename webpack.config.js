@@ -4,11 +4,12 @@ const webpack = require('webpack');
 module.exports = {
 	context: path.resolve(__dirname, './src'),
 	entry: {
-		app: './PlasmaCanvas.js'
+		module: './PlasmaCanvas.js',
+		jquery_plugin: './jquery-plasma.js'
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: 'plasma.js',
+		filename: 'plasma.[name].js',
 	},
 	module: {
 		rules: [
