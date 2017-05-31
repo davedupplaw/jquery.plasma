@@ -29,17 +29,20 @@ import HorizontalBars from "./HorizontalBarsPlasma";
 				width: window.innerWidth,
 				height: 200,
 				scale: 4,
-				framePeriod: 15,
-				movement: 1000,
 				click: function() { this.jumpTime(50); }
 			}, this.options);
 
 			// Map names of plasmas to objects
-			if( typeof newOptions.plasmas === 'string' ) {
+			if( newOptions.plasmas.length > 0 ) {
 				let newPlasmas = [];
 				for( let p in newOptions.plasmas ) {
-					newPlasmas.push( this.plasmaMap[newOptions.plasmas[p]] );
+			 		if( typeof newOptions.plasmas[p] === 'string' ) {
+						newPlasmas.push( this.plasmaMap[newOptions.plasmas[p]] );
+					} else {
+			 			newPlasmas.push( newOptions.plasmas[p] );
+					}
 				}
+				newOptions.plasmas = newPlasmas;
 			}
 
 			new Plasma(this.element, newOptions);
