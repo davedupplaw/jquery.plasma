@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+		div { float: left; }
+	</style>
 </head>
 <body>
 	<div id="plasma"></div>
+	<div id="plasma2"></div>
+	<div id="plasma3"></div>
+	<div id="plasma4"></div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="dist/plasma.jquery_plugin.js"></script>
 	<script>
 		$(document).ready( function() {
+			let bars = ["verticalBars","circles","rotatingZoomingBars"];
 			$('#plasma').plasma({
-				width: 500,
-				height: 500
+				plasmas: bars,
+				width: 200,
+				height: 200
+			});
+			$('#plasma2').plasma({
+				plasmas: bars,
+				scale: 2,
+				width: 200,
+				height: 200
+			});
+			$('#plasma3').plasma({
+				plasmas: bars,
+				scale: 4,
+				width: 200,
+				height: 200
+			});
+			$('#plasma4').plasma({
+				plasmas: bars,
+				scale: 8,
+				width: 200,
+				height: 200
 			});
 		});
 	</script>

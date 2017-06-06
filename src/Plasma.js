@@ -77,11 +77,13 @@ export default class Plasma {
 		const imageData = context.createImageData(1, 1);
 		const pixel = imageData.data;
 
+		// width & height of the pixel array (not the widget)
 		const w = this.getWidth() / this.options.scale;
+		const h = this.getHeight() / this.options.scale;
 
 		// Get all the plasmas
 		for (let p = 0; p < this.options.plasmas.length; p++)
-			this.options.plasmas[p].getPlasma(this.allPlasmas[p], time, this.getHeight() / this.options.scale, w);
+			this.options.plasmas[p].getPlasma(this.allPlasmas[p], time, h, w);
 
 		// Aggregate all the plasmas
 		const aggregatedPlasma = this.options.aggregator(this.allPlasmas, w);
@@ -93,10 +95,12 @@ export default class Plasma {
 			pixel[1] = cm[1];
 			pixel[2] = cm[2];
 			pixel[3] = cm[3];
-			context.putImageData(imageData, y % w, ~~(y / w));
+			const xx = ~~(y%w);
+			const yy = ~~(y/w);
+			context.putImageData(imageData, xx, yy );
 		}
 
-		onscreenContext.drawImage(this.offscreen, 0, 0, this.getWidth(), this.getHeight());
+		onscreenContext.drawImage(this.offscreen, 0, 0, this.getWidth(), this.getHeight() );
 
 		requestAnimationFrame(this._updateCanvas.bind(this));
 	}
