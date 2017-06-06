@@ -26,9 +26,8 @@ export default {
 	},
 
 	ZEBRA: function (v) {
-		const r = precalcs.sine8[(~~v*5)%256];
-		const g = r;
-		return [r, g, g, 255]
+		const r = Math.abs((200-v)*(200-v));
+		return [r, r, r, 255]
 	},
 
 	MAGNOLIA: function (v) {
