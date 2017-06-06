@@ -3,8 +3,8 @@ import precalcs from './Precalcs';
 
 export default class VerticalBars {
 	constructor( speed, size ) {
-		this.speed = speed || 1000.0;
-		this.size = size || 10.0;
+		this.speed = speed || 10000;
+		this.size = size || 4;
 	}
 
 	getPlasma(vals, time, h, w) {

@@ -3,8 +3,8 @@ import precalcs from './Precalcs';
 
 export default class Circles {
 	constructor( speed, size ) {
-		this.speed = speed || 1000;
-		this.size = size || 100;
+		this.speed = speed || 9000;
+		this.size = size || 20;
 	}
 
 	getPlasma(vals, time, h, w) {

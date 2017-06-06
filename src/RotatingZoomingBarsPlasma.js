@@ -3,8 +3,8 @@ import precalcs from './Precalcs';
 
 export default class RotatingZoomingBars {
 	constructor( speed, size ) {
-		this.speed = speed || 1000;
-		this.size = size || 10;
+		this.speed = speed || 3000;
+		this.size = size || 64;
 	}
 
 	getPlasma( vals, time, h, w ) {

@@ -12,7 +12,7 @@ import HorizontalBars from "./HorizontalBarsPlasma";
 	const PlasmaWidget = {
 		_create: function() {
 			this.verticalBars = new VerticalBars().setSize( 4 ).setSpeed(10000);
-			this.horizontal = new HorizontalBars().setSize( 8 ).setSpeed(200);
+			this.horizontal = new HorizontalBars().setSize( 4 ).setSpeed(10000);
 			this.rotatingZoomingBars = new RotatingZoomingBars().setSize(64).setSpeed(3000);
 			this.circles = new Circles().setSize(20).setSpeed(9000);
 			this.plasmaMap = {
